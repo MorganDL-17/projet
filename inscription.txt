@@ -1,0 +1,31 @@
+<?php
+
+require("vendor/autoload");
+
+$username = strip_tags($_POST['username']);
+$email = $_POST['email'];
+$plainPassword = $_POST['password'];
+$passwordBis = $_POST['password_bis'];
+
+if ($plainPassword != $passwordBis){
+	$error= 'Les mots de passe sont diff';
+}
+$passwordHash = password_hash($plainPassword, PASSWORD_DEFAULT);
+
+******* // Ds le fichier index pour concerner ttes les pages
+<?php
+session_start();
+$_SESSION['user']=$user;
+unset($_SESSION['user']);
+header("Locarion:home.php");
+?>
+Ds DefaultController du coup, il faudrait générer des:
+public funtions 
+register : traitement du formulaire d'inscription, 
+appele le userManager pour les requetes sql puis affiche le formulaire
+
+login: traitement du formulaire de connexion
+appele le userManager pour les requetes sql puis affiche le formulaire
+
+logout: traitement du formulaire de déconnexion
+appele le userManager pour les requetes sql puis affiche le formulaire

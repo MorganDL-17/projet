@@ -1,0 +1,1144 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Da",
+				"date_create"
+			],
+			[
+				"post",
+				"postDetails"
+			],
+			[
+				"cla",
+				"className"
+			],
+			[
+				"spl",
+				"spl_autoload_register〔function〕"
+			],
+			[
+				"req",
+				"request"
+			],
+			[
+				"var",
+				"var_dump($stmt);die(\"chaine"
+			],
+			[
+				"va",
+				"var_dump($stmt);die(\"chaine"
+			],
+			[
+				"new",
+				"$newChaine〔variable〕"
+			],
+			[
+				"re",
+				"return"
+			],
+			[
+				"para",
+				"$params〔variable〕"
+			],
+			[
+				"method",
+				"method_exists〔function〕"
+			],
+			[
+				"for",
+				"foreach	foreach …"
+			],
+			[
+				"code",
+				"code_postal"
+			],
+			[
+				"di",
+				"div	Tag"
+			],
+			[
+				"th",
+				"th	<th>"
+			],
+			[
+				"con",
+				"connexion"
+			],
+			[
+				"conn",
+				"connexionDb〔function〕"
+			],
+			[
+				"ret",
+				"return〔keyword〕"
+			],
+			[
+				"PHP",
+				"PHP_EOL〔constant〕"
+			],
+			[
+				"P",
+				"PDF_endpath"
+			],
+			[
+				"pi",
+				"$pikachu〔variable〕"
+			],
+			[
+				"creerHu",
+				"creerHuman"
+			],
+			[
+				"name",
+				"namePlanete"
+			],
+			[
+				"N",
+				"NbPortes"
+			],
+			[
+				"cam",
+				"camp"
+			],
+			[
+				"session",
+				"session_destroy"
+			],
+			[
+				"input",
+				"input"
+			],
+			[
+				"ses",
+				"session_"
+			],
+			[
+				"_",
+				"$_SESSION〔variable〕"
+			],
+			[
+				"_s",
+				"$_SESSION〔variable〕"
+			],
+			[
+				"header",
+				"header〔function〕"
+			],
+			[
+				"hea",
+				"header〔function〕"
+			],
+			[
+				"ht",
+				"htmlentities"
+			],
+			[
+				"va_",
+				"var_dump"
+			],
+			[
+				"nb",
+				"$nbSacs〔variable〕"
+			],
+			[
+				"nbS",
+				"$nbSacs〔variable〕"
+			],
+			[
+				"ac",
+				"action	Attr"
+			],
+			[
+				"str_r",
+				"str_replace〔function〕"
+			],
+			[
+				"strt",
+				"strtolower〔function〕"
+			],
+			[
+				"birth",
+				"birthdateSelect〔function〕"
+			],
+			[
+				"copy",
+				"copyright〔function〕"
+			],
+			[
+				"num",
+				"$num2〔variable〕"
+			],
+			[
+				"is_in",
+				"is_integer〔function〕"
+			],
+			[
+				"pai",
+				"paiement"
+			],
+			[
+				"arra",
+				"array_push〔function〕"
+			],
+			[
+				"print",
+				"print_r〔function〕"
+			],
+			[
+				"var_d",
+				"var_dump〔function〕"
+			],
+			[
+				"prin",
+				"print_r〔function〕"
+			],
+			[
+				"marti",
+				"margin-right"
+			],
+			[
+				"he",
+				"height"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
+				"paddin",
+				"padding-right"
+			],
+			[
+				"dis",
+				"display"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"background-c",
+				"background-color"
+			],
+			[
+				"galei",
+				"galerie2"
+			],
+			[
+				"mar",
+				"margin-right"
+			],
+			[
+				"margin",
+				"margin-left"
+			],
+			[
+				"pos",
+				"position"
+			],
+			[
+				"po",
+				"position"
+			],
+			[
+				"list",
+				"list-style"
+			],
+			[
+				"fi",
+				"figcaption	<figcaption>"
+			],
+			[
+				"im",
+				"img	img"
+			],
+			[
+				"hi",
+				"histoire"
+			],
+			[
+				"ma",
+				"margin"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"co",
+				"color"
+			],
+			[
+				"t",
+				"tr	<tr>"
+			],
+			[
+				"f",
+				"fieldset	<fieldset>"
+			],
+			[
+				"b",
+				"br	<br>"
+			],
+			[
+				"ro",
+				"rowspan	Attr"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "<?php\n\nnamespace Model\\Manager;\n\nuse Model\\Db;\nuse PDO;\nuse Model\\Entity\\post;\n\n\nclass PostManager {\n	\n	//récupère ttes les données de la table\n	public function findAll()\n {\n   $sql = \"SELECT * FROM movies ORDER BY rating DESC\";   \n   $dbh = Db::getDbh();    \n   $stmt = $dbh->prepare($sql);\n\n   $stmt->execute();\n\n   $results = $stmt->fetchAll(\\PDO::FETCH_CLASS, \"\\Model\\Entity\\Post\");    \n   return $results;\n }\n\n    public function create(post $post)\n\n    {    $sql = \"INSERT INTO posts (imdbId, title, year, cast, directors, writers, plot)\n				VALUES (:imdbId, :title, :year, :cast, :directors, :writers, :plot)\";\n\n        $dbh = Db::getDbh();        \n        $stmt = $dbh->prepare($sql);\n  		  $stmt->bindValue(\":imdbId\", $post->getImdbId());\n        $stmt->bindValue(\":title\", $post->getTitle());\n      	$stmt->bindValue(\":year\", $post->getYear());\n		    $stmt->bindValue(\":cast\", $post->getCast());\n		    $stmt->bindValue(\":directors\", $post->getDirectors());\n		    $stmt->bindValue(\":writers\", $post->getWriters());\n		    $stmt->bindValue(\":plot\", $post->getPlot());\n        return $stmt->execute();\n    }\n\n  	public function findOne($id)\n\n    {    $sql = \"SELECT id, title, imdbId, year, cast, directors, writers, plot\n               FROM posts\n               WHERE id =:id\";\n\n        $dbh = Db::getDbh();        \n        $stmt = $dbh->prepare($sql);\n        $stmt = bindValue(\":id\", $id); //donne une valeur au paramètre\n\n        $stmt->execute();\n\n        $results = $stmt->fetchObject('\\Model\\Entity\\Post');        \n        return $result;\n    }\n}\n\n\n\n\n",
+			"file": "/var/www/html/projet/app/Model/Manager/PostManager.php",
+			"file_size": 1570,
+			"file_write_time": 131268080273542900,
+			"settings":
+			{
+				"buffer_size": 1564,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/var/www/html/projet/app/Controller/DefaultController.php",
+			"settings":
+			{
+				"buffer_size": 2126,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<?php\n\n<body>\n    <h1> BLOGoMOVIES | Votre film</h1>\n\n<section>\n\n<?php foreach($posts as $post): ?>\n\n	<article>\n		<div><?= $post->getTitle() ?></div>\n		<img src=\"<?=BASE_URL?>public/upload/<?= $post->getImdbId()?>.jpg\">\n	</article>\n	\n<?php endforeach; ?>\n</section>\n\n</body>\n\n\n$sql = \"SELECT id, title, imdbId, year, cast, directors, writers, plot\n               FROM posts\n               WHERE id =:id\";\n",
+			"file": "/var/www/html/projet/app/templates/detail.php",
+			"file_size": 0,
+			"file_write_time": 131268138035607890,
+			"settings":
+			{
+				"buffer_size": 405,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<?php\n\n//on est dans le dossier /View\nnamespace View;\n\nclass View\n{\n	//statique juste pour qu'on puisse l'appeler en une seule ligne :)\n	//reçoit le nom de la page à inclure (avec ou sans extension) et le title de la page\n	//pour rendre des variables disponibles dans la vue, on utilise le 3e argument\n	public static function show($page, $title, array $vars = null)\n	{\n		//si on a des données supplémentaires...\n		if (!empty($vars)){\n			//on extrait les données\n			//les CLEFS du tableau servent ici de NOM AUX VARIABLES CRÉÉES\n			extract($vars);\n		}\n\n		//permet de passer la page avec ou sans .php\n		$page = str_replace(\".php\", \"\", $page);\n\n		//base se chargera d'inclure $page\n		//et d'afficher le title dans le head\n		include(\"app/templates/base.php\");\n	}\n\n}",
+			"file": "View.php",
+			"file_size": 772,
+			"file_write_time": 131268072490053415,
+			"settings":
+			{
+				"buffer_size": 761,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<body>\n    <h1>BLOGoMOVIES</h1>\n\n<p>...Bientôt des affiches ici...</p>\n\n<section>\n\n<?php foreach($posts as $post): ?>\n\n	<article>\n		<div><?= $post->getTitle() ?></div>\n		<img src=\"<?=BASE_URL?>public/upload/<?= $post->getImdbId()?>.jpg\">\n	</article>\n	\n<?php endforeach; ?>\n</section>\n\n</body>\n",
+			"file": "/var/www/html/projet/app/templates/home.php",
+			"file_size": 293,
+			"file_write_time": 131268089778092415,
+			"settings":
+			{
+				"buffer_size": 293,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "v",
+		"selected_items":
+		[
+			[
+				"v",
+				"View: Toggle Menu"
+			],
+			[
+				"package",
+				"Package Control: List Packages"
+			]
+		],
+		"width": 593.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '462d6673ebd5b9ca297474c166b2e10d' + 'fd945a23b1a0642535aa906951315f52'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/var/www/html/projet/app/View/View.php",
+		"/var/www/html/projet/app/Model/Manager/PostManager.php",
+		"/var/www/html/projet/app/templates/home.php",
+		"/var/www/html/projet/app/Model/Entity/Post.php",
+		"/var/www/html/projet/app/config/config.php",
+		"/var/www/html/projet/app/templates/base.php",
+		"/var/www/html/projet/app/Controller/DefaultController.php",
+		"/var/www/html/projet/public/css/style.css",
+		"/var/www/html/projet/app/config/routes.php",
+		"/var/www/html/projet/index.php",
+		"/var/www/html/projet/app/Controller/Dispatcher.php",
+		"/var/www/html/MVC/app/Controller/DefaultController.php",
+		"/var/www/html/projet/app/View/View.sublime-workspace",
+		"/var/www/html/projet/app/Model/Db.php",
+		"/var/www/html/MVC/app/templates/base.php",
+		"/var/www/html/projet/test1.html",
+		"/var/www/html/projet/app/templates/base2.php",
+		"/var/www/html/projet/app/templates/home2.php",
+		"/var/www/html/MVC/app/Model/Manager/PostManager.php",
+		"/var/www/html/MVC/app/templates/home.php",
+		"/var/www/html/projet/.htaccess",
+		"/var/www/html/MVC/app/configs/configs.php",
+		"/var/www/html/MVC/app/Controller/Dispatcher.php",
+		"/var/www/html/MVC/app/Model/Entity/Post.php",
+		"/var/www/html/MVC/app/configs/routes.php",
+		"/var/www/html/MVC/app/templates/post_create.php",
+		"/var/www/html/MVC/app/View/post_create.php",
+		"/var/www/html/MVC/routes.php",
+		"/var/www/html/MVC/.htaccess",
+		"/var/www/html/MVC/app/templates/errors/404.php",
+		"/var/www/html/MVC/app/templates/faq.php",
+		"/var/www/html/MVC/app/templates/contact.php",
+		"/var/www/html/MVC/app/Model/Db.php",
+		"/var/www/html/MVC/app/View/View.php",
+		"/var/www/html/MVC/app/templates/post_details.php",
+		"/var/www/html/MVC/UpdatePost.php",
+		"/var/www/html/MVC/app/templates/postDetails.php",
+		"/var/www/html/MVC/index.php",
+		"/var/www/html/MVC/app/templates/detail.php",
+		"/var/www/html/MVC/app/templates/page3.php",
+		"/var/www/html/MVC/app/templates/page2.php",
+		"/var/www/html/PDO-01/index.php",
+		"/var/www/html/PDO-01/Update.php",
+		"/var/www/html/PDO-01/Chaine.php",
+		"/var/www/html/PDO-01/Connexion.php",
+		"/var/www/html/PDO-01/ChaineMethode.php",
+		"/etc/php5/apache2/php.ini",
+		"/var/www/html/php/pdo.html",
+		"/var/www/html/PDO-01/Chaine.Methode.php",
+		"/var/www/html/untitled.html",
+		"/var/www/html/PDO-01/Chaine.html",
+		"/var/www/html/PDO-01/Connexion.html",
+		"/var/www/html/PDO-01/index.html",
+		"/home/imie/Documents/Tests/titled.php",
+		"/home/imie/Documents/Tests/untit.php",
+		"/home/imie/Documents/Tests/index.php",
+		"/home/imie/Documents/example/Dieu.php",
+		"/home/imie/Documents/Tests/index2.php",
+		"/home/imie/Documents/Pokemon/index.php",
+		"/home/imie/Documents/example/planetes.php",
+		"/home/imie/Documents/example/ex1POO.php",
+		"/home/imie/Documents/example/index.php",
+		"/var/www/html/supersnico/combat.php",
+		"/var/www/html/supersnico/supprimer_super.php",
+		"/var/www/html/supersnico/utils.php",
+		"/var/www/html/supersnico/index.php",
+		"/var/www/html/supersnico/traitement_super.php",
+		"/var/www/html/correctionCamion.php",
+		"/var/www/html/CamionsBis.php",
+		"/var/www/html/camions.html",
+		"/var/www/html/DL17session/traitement.php",
+		"/var/www/html/battle/utilsh.php",
+		"/var/www/html/battle/traitementSH.php",
+		"/var/www/html/battle/index.php",
+		"/var/www/html/DL17session/index2.php",
+		"/var/www/html/indexSH.php",
+		"/var/www/html/PHPprocedural/index30_11.php",
+		"/var/www/html/DL17session/utils.php",
+		"/var/www/html/DL17session/titi.php",
+		"/var/www/html/DL17session/deconnexion.php",
+		"/var/www/html/DL17session/index.php",
+		"/var/www/html/PHPprocedural/traitement.php",
+		"/var/www/html/PHPprocedural/Fctions.php",
+		"/var/www/html/index30_11.php",
+		"/var/www/html/index.php",
+		"/var/www/html/ExBoucles.php",
+		"/var/www/html/Ex Conditions.php",
+		"/var/www/html/Camion.php",
+		"/var/www/html/test2.php",
+		"/var/www/html/test.html",
+		"/var/www/html/Ex nombres.php",
+		"/var/www/html/ExTableaux.php",
+		"/var/www/html/exam_Morgan.php",
+		"/var/www/html/Boucles.php",
+		"/var/www/html/Fonctions.php",
+		"/var/www/html/Array.php",
+		"/var/www/html/untitled.php",
+		"/var/www/html/intro.php",
+		"/var/www/html/ExPlacements2.php",
+		"/var/www/html/ExArrays.php",
+		"/var/www/html/ExPlacements.php",
+		"/var/www/html/ExImmo.php",
+		"/home/imie/Desktop/ads.json",
+		"/var/www/html/tableaux.php",
+		"/var/www/html/Placements.php",
+		"/var/www/html/Dates.php",
+		"/var/www/html/info.php",
+		"/var/www/html/ex1.php",
+		"/var/www/html/test.php",
+		"/var/www/html/untitled",
+		"/home/imie/Desktop/ex3resp.html",
+		"/home/imie/Desktop/ex2resp.css",
+		"/home/imie/Desktop/ex2resp.html",
+		"/home/imie/Desktop/ex3resp.css",
+		"/home/imie/Desktop/responsive13.css",
+		"/home/imie/Desktop/affiches.css",
+		"/home/imie/Desktop/responsive12.html",
+		"/home/imie/Desktop/responsive12.css",
+		"/home/imie/Desktop/responsive13.html",
+		"/home/imie/Desktop/affiches.html",
+		"/home/imie/Desktop/affichesok.html",
+		"/home/imie/Desktop/affichesok.css",
+		"/home/imie/Desktop/HTML-CSS/plan.html",
+		"/home/imie/Desktop/HTML-CSS/Suite.html",
+		"/home/imie/Desktop/bonhommemoche.html",
+		"/home/imie/Desktop/moche.css",
+		"/home/imie/Desktop/affichesh.css",
+		"/home/imie/Desktop/affichesh.html"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"dateCreated",
+			"content",
+			"imdbId",
+			"dateCreated",
+			"content",
+			"ville",
+			"onepost",
+			"chaine",
+			"cp",
+			"adresse",
+			"/",
+			"error",
+			"fax",
+			"tel",
+			"code_postal",
+			"nom_chaine",
+			"cope_postal",
+			"cp",
+			"est",
+			"bobo",
+			"bibi",
+			"4",
+			"perso2",
+			"perso1",
+			"sante",
+			"prenom",
+			"ge",
+			"num2)",
+			"num1",
+			"vins",
+			";",
+			"error_reporting",
+			"display_errors",
+			"utf8_general_ci",
+			"utf8_unicode_ci"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"year",
+			"imdbId",
+			"Cast",
+			"imdbId",
+			"dateCreated",
+			"newpost",
+			"post",
+			"content",
+			"title",
+			"\\",
+			"numFax",
+			"numTel",
+			"cp",
+			"nom",
+			"code_postal",
+			"cope_postal",
+			"Benjamin",
+			"Vincent",
+			"quatre",
+			"mechant",
+			"gentil",
+			"vie",
+			"cri",
+			"pos"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/var/www/html/projet/app/Model/Manager/PostManager.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1564,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1285,
+								1285
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content"
+							],
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 405.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/var/www/html/projet/app/Controller/DefaultController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2126,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								875,
+								875
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content"
+							],
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 315.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/var/www/html/projet/app/templates/detail.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 405,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								405,
+								405
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content"
+							],
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "View.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 761,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								678,
+								678
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content"
+							],
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/var/www/html/projet/app/templates/home.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 293,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content"
+							],
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "View.sublime-project",
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/Desktop/bonhommemoche.html"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 127.0,
+	"status_bar_visible": false,
+	"template_settings":
+	{
+	}
+}
